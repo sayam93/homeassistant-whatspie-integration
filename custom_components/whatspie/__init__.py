@@ -1,11 +1,27 @@
 import logging
-
+import voluptuous as vol
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.typing import ConfigType
 from .const import DOMAIN
+from homeassistant.helpers import config_validation as cv
+from .const import DOMAIN, CONF_API_TOKEN, CONF_FROM_NUMBER, CONF_COUNTRY_CODE
 
 _LOGGER = logging.getLogger(__name__)
+
+
+CONFIG_SCHEMA = vol.Schema(
+    {
+        DOMAIN: vol.Schema(
+            {
+                vol.Required(CONF_API_TOKEN): cv.string,
+                vol.Required(CONF_FROM_NUMBER): cv.string,
+                vol.Required(CONF_COUNTRY_CODE): cv.string,
+            }
+        )
+    },
+    extra=vol.ALLOW_EXTRA,  # Allow additional keys in YAML
+)
 
 
 async def async_setup(hass: HomeAssistant, config: ConfigType):

@@ -3,7 +3,8 @@ notify:
   description: Send a WhatsApp notification via WhatsPie.
   fields:
     data:
-      description: Data containing the message and target for the notification.
+      name: Data
+      description: Data for the WhatsPie notification, including message and target.
       example:
         message: "Test Notification"
         target:

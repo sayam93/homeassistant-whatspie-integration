@@ -9,7 +9,5 @@
   "iot_class": "cloud_push",
   "issue_tracker": "https://github.com/arifwn/homeassistant-whatspie-integration/issues",
   "version": "2.0.0",
-  "requirements": ["httpx>=0.24.0"],
-  "supported_features": ["notify"],
-  "domains": ["notify"]
+  "requirements": ["httpx>=0.24.0"]
 }
